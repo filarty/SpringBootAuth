@@ -17,4 +17,4 @@ jobs:
             distribution: 'oracle'
             java-version: '21'
       - name: Mvn package
-        run: mvn -DLOKI_URL=http://loki:3100 clean install
+        run: mvn -DLOKI_URL=http://lokalhost:3100 clean install
