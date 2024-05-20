@@ -19,6 +19,7 @@ jobs:
       - name: Mvn package
         run: mvn -DLOKI_URL=http://localhost:3100 clean install
   test:
+    needs: [build]
     runs-on: ubuntu-latest
     services:
       loki:
