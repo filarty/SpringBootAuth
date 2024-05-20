@@ -1,0 +1,23 @@
+2024-05-20T13:43:00.252+02:00  INFO 27632 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Starting SpringBootAuthApplicationTests using Java 21.0.2 with PID 27632 (started by Artjom in C:\Users\Artjom\Documents\SpringBootAuth)
+2024-05-20T13:43:00.254+02:00  INFO 27632 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-05-20T13:43:02.616+02:00  INFO 27632 --- [SpringBootAuth] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-05-20T13:43:02.617+02:00  INFO 27632 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-20T13:43:02.630+02:00  INFO 27632 --- [SpringBootAuth] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-20T13:43:02.638+02:00  INFO 27632 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 21 ms
+2024-05-20T13:43:02.717+02:00  INFO 27632 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Started SpringBootAuthApplicationTests in 2.886 seconds (process running for 3.903)
+2024-05-20T13:43:03.861+02:00  INFO 27632 --- [SpringBootAuth] [main] c.f.S.controller.TestController          : Test!
+2024-05-20T13:45:30.418+02:00  INFO 9220 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Starting SpringBootAuthApplicationTests using Java 21.0.2 with PID 9220 (started by Artjom in C:\Users\Artjom\Documents\SpringBootAuth)
+2024-05-20T13:45:30.419+02:00  INFO 9220 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-05-20T13:45:31.410+02:00  INFO 9220 --- [SpringBootAuth] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-05-20T13:45:31.411+02:00  INFO 9220 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-20T13:45:31.414+02:00  INFO 9220 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-05-20T13:45:31.447+02:00  INFO 9220 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Started SpringBootAuthApplicationTests in 1.469 seconds (process running for 2.46)
+2024-05-20T13:45:32.199+02:00  INFO 9220 --- [SpringBootAuth] [main] c.f.S.controller.TestController          : Test!
+2024-05-20T13:46:58.616+02:00  INFO 22264 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Starting SpringBootAuthApplicationTests using Java 21.0.2 with PID 22264 (started by Artjom in C:\Users\Artjom\Documents\SpringBootAuth)
+2024-05-20T13:46:58.618+02:00  INFO 22264 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-05-20T13:47:01.149+02:00  INFO 22264 --- [SpringBootAuth] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-05-20T13:47:01.150+02:00  INFO 22264 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-20T13:47:01.169+02:00  INFO 22264 --- [SpringBootAuth] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-20T13:47:01.181+02:00  INFO 22264 --- [SpringBootAuth] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 31 ms
+2024-05-20T13:47:01.262+02:00  INFO 22264 --- [SpringBootAuth] [main] c.f.S.SpringBootAuthApplicationTests     : Started SpringBootAuthApplicationTests in 3.028 seconds (process running for 4.102)
+2024-05-20T13:47:02.530+02:00  INFO 22264 --- [SpringBootAuth] [main] c.f.S.controller.TestController          : Test!
