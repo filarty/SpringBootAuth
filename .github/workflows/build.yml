@@ -51,11 +51,11 @@ jobs:
       - name: checkout Repo
         uses: actions/checkout@v4
       - name: SSH to Actions
-        uses: rdp-studio/ssh2actions@v2.0.0
+        uses: invi5H/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script: echo "hello"
+          run: ssh ${{ steps.ssh.outputs.SERVER }} echo "hello"
