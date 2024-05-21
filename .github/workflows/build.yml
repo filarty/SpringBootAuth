@@ -51,11 +51,11 @@ jobs:
       - name: checkout Repo
         uses: actions/checkout@v4
       - name: SSH to Actions
-        uses: invi5H/ssh-action@v1.0.0
+        uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          privateKey: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          run: ssh ${{ steps.ssh.outputs.SERVER }} echo "hello"
+          command: ls -a
