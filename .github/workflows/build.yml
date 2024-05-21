@@ -38,3 +38,24 @@ jobs:
         run: mvn -DLOKI_URL=http://localhost:3100 clean install
       - name: Run Tests
         run: mvn -DLOKI_URL=http://localhost:3100 test
+
+  deploy:
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    services:
+      loki:
+        image: grafana/loki
+        ports:
+          - "3100:3100"
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+      - name: SSH to Actions
+        uses: rdp-studio/ssh2actions@v2.0.0
+        with:
+          host: ${{ HOST_IP }}
+          username: ${{ USERNAME }}
+          key: ${{ KEY }}
+          port: ${{ PORT }}
+          passphrase: ${{ PASSPHRASE }}
+          script: echo "hello"
