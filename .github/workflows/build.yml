@@ -57,5 +57,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: "git clone git@github.com:filarty/SpringBootAuth.git 
-          & cd SpringBootAuth & docker build ."
+          script: "git pull & cd SpringBootAuth & docker build ."
