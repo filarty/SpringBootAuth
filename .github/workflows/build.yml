@@ -51,11 +51,10 @@ jobs:
       - name: checkout Repo
         uses: actions/checkout@v4
       - name: SSH to Actions
-        uses: garygrossgarten/github-action-ssh@release
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.USERNAME }}
-          privateKey: ${{ secrets.KEY }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          command: ls -a
+          script: ls -a
