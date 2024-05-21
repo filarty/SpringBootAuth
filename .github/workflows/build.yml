@@ -57,4 +57,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: "cd SpringBootAuth & git pull & docker build ."
+          script: "cd SpringBootAuth && git pull & docker build ."
