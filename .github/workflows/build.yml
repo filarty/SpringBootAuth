@@ -42,15 +42,20 @@ jobs:
   deploy:
     needs: [ test ]
     runs-on: ubuntu-latest
+    services:
+      loki:
+        image: grafana/loki
+        ports:
+          - "3100:3100"
     steps:
       - name: checkout Repo
         uses: actions/checkout@v4
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@v0.1.7
+      - name: SSH to Actions
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
-          source: "./"
-          target: "/SpringBootAuth"
+          passphrase: ${{ secrets.PASSPHRASE }}
+          script: git clone git@github.com:filarty/SpringBootAuth.git
