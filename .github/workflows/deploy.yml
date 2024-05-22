@@ -61,5 +61,5 @@ jobs:
             ./mvnw -DLOKI_URL=${{ secrets.LOKI_URL }} clean package
             docker stop spring-prod
             docker rm spring-prod
-            docker build  --build-arg LOKI_URL=${{ secrets.LOKI_URL }} -t springauth:latest .
-            docker run -d -p 8080:8080 --name spring-prod springauth:latest
+            docker build -t springauth:latest .
+            docker run -e LOKI_URL=${{ secrets.LOKI_URL }} -e APP_NAME=Spring -d -p 8080:8080 --name spring-prod springauth:latest
