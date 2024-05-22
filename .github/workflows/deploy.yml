@@ -1,0 +1,63 @@
+name: GitHub Actions
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      loki:
+        image: grafana/loki
+        ports:
+          - "3100:3100"
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+      - name: JDK Repo
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '21'
+      - name: Mvn package
+        run: mvn -DLOKI_URL=http://localhost:3100 clean install
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    services:
+      loki:
+        image: grafana/loki
+        ports:
+          - "3100:3100"
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+      - name: JDK Repo
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '21'
+      - name: Mvn package
+        run: mvn -DLOKI_URL=http://localhost:3100 clean install
+      - name: Run Tests
+        run: mvn -DLOKI_URL=http://localhost:3100 test
+
+  deploy:
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+      - name: SSH to Actions
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            source .profile
+            cd SpringBootAuth
+            git pull
+            ./mvnw -DLOKI_URL=${{ secrets.LOKI_URL }} clean package
+            docker build  --build-arg LOKI_URL=${{ secrets.LOKI_URL }} -t springauth:latest .
+            docker run -d -p 8080:8080 --name spring-prod springauth:latest
