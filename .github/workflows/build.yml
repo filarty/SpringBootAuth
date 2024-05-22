@@ -60,6 +60,6 @@ jobs:
           script: |
             source .profile
             cd SpringBootAuth
-            git pull &&
+            git pull
             ./mvnw -DLOKI_URL=${{ secrets.LOKI_URL }} clean package
             docker build  --build-arg LOKI_URL=${{ secrets.LOKI_URL }} .
