@@ -57,6 +57,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: "cat .profile && source .profile && cd SpringBootAuth && git pull &&
-          mvnw -DLOKI_URL=${{ secrets.LOKI_URL }} clean package && docker build  --build-arg 
-          LOKI_URL=${{ secrets.LOKI_URL }} ."
+          script: |
+            source .profile
+            cd SpringBootAuth
+            git pull &&
+            ./mvnw -DLOKI_URL=${{ secrets.LOKI_URL }} clean package
+            docker build  --build-arg LOKI_URL=${{ secrets.LOKI_URL }} .
