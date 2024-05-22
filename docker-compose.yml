@@ -1,15 +1,4 @@
 services:
-  spring-auth:
-    image: springauth
-    container_name: auth
-    ports:
-      - "8080:8080"
-    depends_on:
-      - loki
-    environment:
-      - LOKI_URL=http://loki:3100
-      - name=SpringAuth
-
   prometheus:
     image: prom/prometheus
     container_name: prometheus
@@ -25,9 +14,3 @@ services:
     restart: "unless-stopped"
     volumes:
       - ./grafana/datasources:/etc/grafana/datasources
-
-  loki:
-    image: grafana/loki
-    container_name: loki
-    ports:
-      - "3100:3100"
